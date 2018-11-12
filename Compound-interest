@@ -3,17 +3,17 @@ public class Unit4Interest {
 		
 		double amount;
 		double principal = 1000.0;
-		double percent = 0.05;
-		double rate;
+		double rate = 0.04;
+		double percent;
 		
-		for (rate = 5.00; rate <= 10; rate++) {
-			System.out.printf("\nRate: %.2f percent", rate);
+		for (percent = 5.00; percent <= 10; percent++) {
+			System.out.printf("\nRate: %.2f percent", percent);
 			System.out.printf("\n%s%20s\n", "Year", "Amount on deposit");
+			rate += 0.01;
 			
 			for (int year = 1; year <=10; year++) {
-				amount = principal * Math.pow(1.0 + percent, year);
+				amount = principal * Math.pow(1.0 + rate, year);
 				System.out.printf("%4d%,20.2f\n", year, amount);
-				percent = percent + 0.01;
 			}
 		}		
 	}
